@@ -1,6 +1,6 @@
-# 💻 Deploy to App Engine Standard
+# 💻 Deploy to App Engine Flexible
 
-You can apply this application to the Google Cloud Platform App Engine. Following are the steps for running this application in a standard App Engine environment.
+You can apply this application to the Google Cloud Platform App Engine. Following are the steps for running this application in a Flexible App Engine environment.
 
 ## 📌Set up Google Cloud Platform
 
