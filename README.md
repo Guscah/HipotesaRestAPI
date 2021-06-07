@@ -1,6 +1,6 @@
 <!--
-*** WELCOME TO HIPOTESA PROJECT
-*** Thanks for checking out the Hipotesa Project Readme. If you have a suggestion
+*** WELCOME TO HIPOTESA REST API AND CLOUD MANAGEMENT README
+*** Thanks for checking out the Hipotesa REST API and Cloud Management Readme. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
 *** or simply open an issue with the tag "enhancement".
 *** Thanks again! Now go create something AMAZING! :D
@@ -15,23 +15,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/davindb/HipotesaProject">
+  <a href="https://github.com/Guscah/HipotesaRestAPI">
     <img src="images/hipotesa.png" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Hipotesa Healthcare Solutions Project</h3>
+  <h3 align="center">Hipotesa REST API and Cloud Management</h3>
 
   <p align="center">
     An AI based healthcare system aims to help patients to detect their disease at an early stage to be able to identify the treatment plan early on and help them secure a good way to live.
     <br />
-    <a href="https://github.com/davindb/HipotesaProject#about-the-project"><strong>Let's Get Started »</strong></a>
+    <a href="https://github.com/Guscah/HipotesaRestAPI#about-the-project"><strong>Let's Get Started »</strong></a>
     <br />
     <br />
     <a href="https://github.com/davindb/HipotesaProject/">View Demo</a>
     ·
-    <a href="https://github.com/davindb/HipotesaProject/issues">Report Bug</a>
+    <a href="https://github.com/Guscah/HipotesaRestAPI/issues">Report Bug</a>
     ·
-    <a href="https://github.com/davindb/HipotesaProject/#contributing">Contribute</a>
+    <a href="https://github.com/Guscah/HipotesaRestAPI/#contributing">Contribute</a>
   </p>
 </p>
 
@@ -50,13 +50,14 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#public-apis">Public APIs</a></li>
-         <li><a href="#project-repositories">Project Repositories</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+          <li><a href="#public-apis">Public APIs</a></li>
+         <li><a href="#other-repositories">Other Repositories</a></li>
       </ul>
     </li>
-    <li><a href="#our-features">Our Features</a></li>
-    <li><a href="#team-members">Team Members</a></li>
+    <li><a href="#our-cloud-computing-engineer-team">Our Cloud Computing Engineer Team</a></li>
     <li><a href="#contributing">Contributing</a></li>
+      <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
     <li><a href="#copyright">Copyright</a></li>
   </ol>
@@ -97,22 +98,29 @@ This is an overview of Hipotesa Cloud Architecture, what the prequisites are, ho
 
 ### Installation
 
-For deploy in Google Cloud Platform, you don't need to install any software just provide file (app.yaml, main.py and requirements.txt).
+To deploy an application on Google Cloud Platform, you don't need to install any software, just provide app.yaml, main.py and requirements.txt files.
 
 
 
 ### Deployment
 
-Deployment REST API to Google Cloud Platform so that it can be accessed by android apps, We choose App Engine as platform to deploy our REST API.
+ For the REST API deployment on the Google Cloud Platform to be able to be accessed by android apps, we choose App Engine Service as a platform to deploy our REST API.
 
- Deployment using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/blob/main/AppEngine.md) (Main Option)
+ The deployment service is using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/AppEngine.md) (Main Option)
 
-<b>Note:</b> You can't deploy using App Engine Standard if the number of files is more than 10K and need time more than 10 minutes to deploy 
+<b>Note:</b> You can't do the deployment using the App Engine Standard if the number of files are more than 10K and it will need more time for like more than 10 minutes to deploy.
+
+### Public APIs
+
+Please check the *API Documentation* below for more information and guidance.
+- [API Documentation](https://github.com/davindb/HipotesaDeveloper/readme)
 
 
-### Project Repositories
+### Other Repositories
 
-- [Hipotesa Project](https://github.com/davindb/HipotesaProject)
+Check our other repositories to know more about Hipotesa.
+
+- [Hipotesa Project](https://github.com/davindb/HipotesaProject/readme)
 - [Hipotesa Application]()
 - [Hipotesa Model Algorithm](https://github.com/davindb/HipotesaAlgorithm)
 
@@ -120,13 +128,12 @@ Deployment REST API to Google Cloud Platform so that it can be accessed by andro
 
 <!-- TEAM MEMBERS -->
 
-## Our Cloud Engineer
+## Our Cloud Computing Engineer Team
 
-|            Member             | Student ID |                     ,,,                           Contacts                                                  |
-| :---------------------------: | :--------: |  :--------------------------------------------------------------------------------------------------------: |
-| Agus Cahya Ananda Yoga Putra  |  C0121258  |  [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url]     |
-|       Fadia Fatta Dylla       |  C0121262  |  [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
-
+|            Member             | Student ID |       Project Role        |                                                  Contacts                                                  |
+| :---------------------------: | :--------: | :-----------------------: | :--------------------------------------------------------------------------------------------------------: |
+| Agus Cahya Ananda Yoga Putra |  C0121258  | Cloud Computing Engineer | [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url] |
+|    Fadia Fatta Dylla     |  C0121262  | Cloud Computing Engineer | [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
 
 <!-- CONTRIBUTING -->
 
@@ -139,6 +146,12 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- ACKNOWLEDGEMENTS -->
 
