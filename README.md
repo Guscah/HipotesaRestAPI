@@ -117,6 +117,16 @@ We provide public APIs for many developers to contribute or build some similar a
 
 _For more information, please refer to the [App Documentation]()_
 
+<!-- Deployment -->
+
+## Deployment
+
+Deployment REST API to Google Cloud Platform so that it can be accessed by android apps. We deploy using App Engine, but we also have Compute Engine as option to deploy the API.
+
+1. Deployment using App Engine Flexible Environment (Main Option)
+2. Deployment using Compute Engine
+_For more information, please refer to the [App Documentation]()_
+
 <!-- TEAM MEMBERS -->
 
 ## Team Members
