@@ -99,13 +99,16 @@ This is an overview of Hipotesa Cloud Architecture, what the prequisites are, ho
 
 For deploy in Google Cloud Platform, you don't need to install any software just provide file (app.yaml, main.py and requirements.txt).
 
-For 
+<!-- Deployment -->
 
-### Public APIs
+## Deployment
 
-We provide public APIs for many developers to contribute or build some similar application. Follow the instructions in the **Hipotesa Public APIs Documentation** below.
+Deployment REST API to Google Cloud Platform so that it can be accessed by android apps, We choose App Engine as platform to deploy our REST API.
 
-- [Public APIs Documentation]()
+ Deployment using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/blob/main/AppEngine.md) (Main Option)
+
+<b>Note:</b> You can't deploy using App Engine Standard if the number of files is more than 10K and need time more than 10 minutes to deploy 
+
 
 ### Project Repositories
 
@@ -123,15 +126,7 @@ We provide public APIs for many developers to contribute or build some similar a
 
 _For more information, please refer to the [App Documentation]()_
 
-<!-- Deployment -->
 
-## Deployment
-
-Deployment REST API to Google Cloud Platform so that it can be accessed by android apps, We choose App Engine as platform to deploy our REST API.
-
- Deployment using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/blob/main/AppEngine.md) (Main Option)
-
-<b>Note:</b> You can't deploy using App Engine Standard if the number of files is more than 10K and need time more than 10 minutes to deploy 
 
 <!-- TEAM MEMBERS -->
 
