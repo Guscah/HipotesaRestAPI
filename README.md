@@ -99,9 +99,9 @@ This is an overview of Hipotesa Cloud Architecture, what the prequisites are, ho
 
 For deploy in Google Cloud Platform, you don't need to install any software just provide file (app.yaml, main.py and requirements.txt).
 
-<!-- Deployment -->
 
-## Deployment
+
+### Deployment
 
 Deployment REST API to Google Cloud Platform so that it can be accessed by android apps, We choose App Engine as platform to deploy our REST API.
 
