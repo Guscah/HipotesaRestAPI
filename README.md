@@ -121,10 +121,9 @@ _For more information, please refer to the [App Documentation]()_
 
 ## Deployment
 
-Deployment REST API to Google Cloud Platform so that it can be accessed by android apps. We deploy using App Engine, but we also have Compute Engine as option to deploy the API.
+Deployment REST API to Google Cloud Platform so that it can be accessed by android apps, We choose App Engine as platform to deploy our REST API.
 
-1. Deployment using App Engine [Flexible Environment]() (Main Option)
-2. Deployment using [Compute Engine]() 
+ Deployment using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/blob/main/AppEngine.md) (Main Option)
 
 <b>Note:</b> You can't deploy using App Engine Standard if the number of files is more than 10K and need time more than 10 minutes to deploy 
 
