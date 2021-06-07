@@ -120,12 +120,12 @@ Deployment REST API to Google Cloud Platform so that it can be accessed by andro
 
 <!-- TEAM MEMBERS -->
 
-## Team Members
+## Our Cloud Engineer
 
-|            Member             | Student ID |       Project Role        |                                                  Contacts                                                  |
-| :---------------------------: | :--------: | :-----------------------: | :--------------------------------------------------------------------------------------------------------: |
-| Agus Cahya Ananda Yoga Putra  |  C0121258  |  Cloud Platform Engineer  |   [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url]   |
-|       Fadia Fatta Dylla       |  C0121262  |  Cloud Platform Engineer  | [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
+|            Member             | Student ID |                     ,,,                           Contacts                                                  |
+| :---------------------------: | :--------: |  :--------------------------------------------------------------------------------------------------------: |
+| Agus Cahya Ananda Yoga Putra  |  C0121258  |  [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url]     |
+|       Fadia Fatta Dylla       |  C0121262  |  [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
 
 
 <!-- CONTRIBUTING -->
