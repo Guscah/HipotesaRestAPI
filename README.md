@@ -29,9 +29,11 @@
     <br />
     <a href="https://github.com/davindb/HipotesaProject/">View Demo</a>
     ·
-    <a href="https://github.com/Guscah/HipotesaRestAPI/issues">Report Bug</a>
+    <a href="http://www.hipotesa.tech/">Our Website</a>
     ·
     <a href="https://github.com/Guscah/HipotesaRestAPI/#contributing">Contribute</a>
+    ·
+    <a href="https://github.com/Guscah/HipotesaRestAPI/issues">Report Bug</a>
   </p>
 </p>
 
