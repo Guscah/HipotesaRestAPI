@@ -113,7 +113,7 @@ To deploy an application on Google Cloud Platform, you don't need to install any
 ### Public APIs
 
 Please check the *API Documentation* below for more information and guidance.
-- [API Documentation](https://github.com/davindb/HipotesaDeveloper/readme)
+- [API Documentation](https://github.com/davindb/HipotesaDeveloper/#readme)
 
 
 ### Other Repositories
