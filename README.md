@@ -112,19 +112,9 @@ Deployment REST API to Google Cloud Platform so that it can be accessed by andro
 
 ### Project Repositories
 
-- [Hipotesa Application]()
-- [Hipotesa Rest API & Cloud Management](https://github.com/Guscah/HipotesaRestAPI)
-- [Hipotesa Model Algorithm]()
-
-<!-- OUR FEATURES -->
-
-## Our Features
-
-1. Symptoms based disease prediction algorithm.
-2. Risk information about the contracted disease on the patient.
-3. Treatment plan that patient could follow.
-
-_For more information, please refer to the [App Documentation]()_
+- [Hipotesa Project](https://github.com/davindb/HipotesaProject)
+- [Hipotesa Application]
+- [Hipotesa Model Algorithm](https://github.com/davindb/HipotesaAlgorithm)
 
 
 
