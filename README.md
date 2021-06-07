@@ -113,7 +113,7 @@ Deployment REST API to Google Cloud Platform so that it can be accessed by andro
 ### Project Repositories
 
 - [Hipotesa Project](https://github.com/davindb/HipotesaProject)
-- [Hipotesa Application]
+- [Hipotesa Application]()
 - [Hipotesa Model Algorithm](https://github.com/davindb/HipotesaAlgorithm)
 
 
