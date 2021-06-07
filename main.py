@@ -267,7 +267,7 @@ def predict():
         'Description': description,
         'Precaution': precaution
     }
-    results = make_response(jsonify(results), 200)
+    results = jsonify(results)
 
     # Return the results
     return results
