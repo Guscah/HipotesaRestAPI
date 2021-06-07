@@ -23,7 +23,7 @@ Follow the installation instructions according to your operating system used.
 
 ## 📌Downloading and running the app
 
-**1. Cloning the repository to local computer**
+**1. Cloning the repository to local computer or when you want use console of GCP, you can use cloud shell**
 
 ```bash
 git clone https://github.com/Guscah/HipotesaRestAPI.git
@@ -34,3 +34,24 @@ git clone https://github.com/Guscah/HipotesaRestAPI.git
 ```bash
 cd HipotesaRestAPI
 ```
+
+**3. Open app.yaml**
+
+```bash
+nano app.yaml
+```
+customize your configuration App Engine due your system requirement.
+
+**4. Execute App Engine**
+
+```bash
+gcloud app deploy
+```
+
+**5. See Log**
+Monitor your log to ensure your system working properly.
+
+```bash
+gcloud app logs tail -s default
+```
+
