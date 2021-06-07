@@ -6,3 +6,5 @@ numpy>=1.9.2
 pandas>=0.19
 scikit-learn==0.20.0
 tensorflow_decision_forests==0.1.4
+scipy
+firebase-admin
