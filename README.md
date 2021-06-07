@@ -74,7 +74,7 @@ In this project we create an **Android Native Mobile Application** with the reso
 
 ### Resources
 
-- [Android Studio](https://developer.android.com/studio)
+- [Google CLoud Platform](https://cloud.google.com/)
 - [Tensorflow](https://www.tensorflow.org/)
 - [Google App Engine](https://cloud.google.com/appengine)
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -84,16 +84,22 @@ In this project we create an **Android Native Mobile Application** with the reso
 
 ## Getting Started
 
-This is an overview of Hipotesa, what the prequisites are, how to download and use the app, public APIs guidance for developers, and more.
+This is an overview of Hipotesa Cloud Architecture, what the prequisites are, how to download and use the app, public APIs guidance for developers, and more.
+
+<p align="center">
+    <img src="https://github.com/Guscah/HipotesaRestAPI/blob/main/Cloud%20Configuration.png">
+</p>
 
 ### Prerequisites
 
-- Android 8.0 Oreo (API 26)
+- Laptop / PC
 - Internet Connection
 
 ### Installation
 
-- [Android APK Installer]()
+For deploy in Google Cloud Platform, you don't need to install any software just provide file (app.yaml, main.py and requirements.txt).
+
+For 
 
 ### Public APIs
 
@@ -133,11 +139,9 @@ Deployment REST API to Google Cloud Platform so that it can be accessed by andro
 
 |            Member             | Student ID |       Project Role        |                                                  Contacts                                                  |
 | :---------------------------: | :--------: | :-----------------------: | :--------------------------------------------------------------------------------------------------------: |
-| Davin Darmalaksana Bhagaspati |  M0111153  | Machine Learning Engineer | [![davin-linkedin][linkedin-shield]][davin-linkedin-url][![davin-github][github-shield]][davin-github-url] |
-|    Ihsan Nafilah Ramdhani     |  M0111152  | Machine Learning Engineer | [![ihsan-linkedin][linkedin-shield]][ihsan-linkedin-url][![ihsan-github][github-shield]][ihsan-github-url] |
 | Agus Cahya Ananda Yoga Putra  |  C0121258  |  Cloud Platform Engineer  |   [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url]   |
 |       Fadia Fatta Dylla       |  C0121262  |  Cloud Platform Engineer  | [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
-|  Ravedya Aufa Amaranggana W.  |  A0111155  |     Mobile Developer      | [![raved-linkedin][linkedin-shield]][raved-linkedin-url][![raved-github][github-shield]][raved-github-url] |
+
 
 <!-- CONTRIBUTING -->
 
