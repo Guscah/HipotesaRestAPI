@@ -1,94 +1,276 @@
-from assets import diseases_list, symptoms_list, disease_description, disease_precaution
-import tensorflow_decision_forests as tfdf
-from tensorflow import keras
 from flask.helpers import make_response
 from flask.json import jsonify
 import numpy as np
 import pandas as pd
-from flask import Flask, request, jsonify
-import os
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
+from flask import Flask, request, jsonify, render_template
+from tensorflow import keras
+from tensorflow.python.ops.gen_array_ops import where
+import tensorflow_decision_forests as tfdf
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+from operator import itemgetter
 
-app = Flask(__name__)
-model_path = './my_model'
+# Setup Flask, Model and Firestore
+app = Flask(__name__,
+            static_url_path='', 
+            static_folder='web/static',
+            template_folder='web/templates')
+
+model_path = '../saved_model/my_model'
 model = keras.models.load_model(model_path)
 
+cred = credentials.Certificate("service_key.json")
+firebase_admin.initialize_app(cred)
+db = firestore.client()
 
 @app.route('/')
 def index():
-    return '''
-    Symptoms Based Disease Prediction Public API built by Kreasi Anak Bangsa team from Bangkit 2021.
-    '''
+    return render_template('index.html')
 
+# Read all diseases
+@app.route('/diseases', methods = ['GET'])
+def diseases():
+    results = []
+    docs = db.collection('diseases')
 
-@app.route('/predict', methods=['POST'])
+    # Retrieve the data from users as json
+    data = request.data
+
+    if data:
+
+        data = request.get_json()
+
+        try:
+            if 'where' in data:
+
+                where = data.get('where')
+
+                for i in where.items():
+                    if type(i[1]) is list:
+                        docs = docs.where(i[0], 'in', i[1])
+                    else:
+                        print(i)
+                        docs = docs.where(i[0], '==', i[1])
+
+            if 'order' in data:
+                order = data.get('order')
+                if 'descending' in data:
+                    descending = data.get('descending')
+                
+                    if descending:
+                        docs = docs.order_by(order, direction=firestore.Query.DESCENDING)
+                    else:
+                        docs = docs.order_by(order)
+                else:
+                    docs = docs.order_by(order)
+            
+            if 'descending' in data:
+                descending = data.get('descending')
+                if 'order' not in data and descending is True:
+                    docs = docs.order_by('Id' ,direction=firestore.Query.DESCENDING)
+
+            if 'limit' in data:
+                limit = data.get('limit')
+                docs = docs.limit(limit)
+
+            docs = docs.get()
+            for doc in docs:
+                results.append(doc.to_dict())
+
+            # Return the results
+            return jsonify(results)
+            
+        except TypeError as err:
+            return f'Type error: {err}'
+
+    elif request.args:
+        try:
+            args = request.args
+
+            for i in args.items():
+                docs = docs.where(i[0], '==', int(i[1]) if i[0] == 'Id' else i[1])
+            
+            docs = docs.get()
+            for doc in docs:
+                results.append(doc.to_dict())
+            
+            results = sorted(results, key=itemgetter('Id'))
+
+            # Return the results
+            return jsonify(results)
+
+        except TypeError as err:
+            return f'Type error: {err}'
+    else:
+        
+        docs = docs.get()
+        for doc in docs:
+            results.append(doc.to_dict())
+        
+        results = sorted(results, key=itemgetter('Id'))
+
+        # Return the results
+        return jsonify(results)
+
+# Read all symptoms
+@app.route('/symptoms', methods = ['GET'])
+def symptoms():
+    results = []
+    docs = db.collection('symptoms')
+
+    # Retrieve the data from users as json
+    data = request.data
+
+    if data:
+
+        data = request.get_json()
+
+        try:
+            if 'where' in data:
+
+                where = data.get('where')
+
+                for i in where.items():
+                    if type(i[1]) is list:
+                        docs = docs.where(i[0], 'in', i[1])
+                    else:
+                        print(i)
+                        docs = docs.where(i[0], '==', i[1])
+
+            if 'order' in data:
+                order = data.get('order')
+                if 'descending' in data:
+                    descending = data.get('descending')
+                
+                    if descending:
+                        docs = docs.order_by(order, direction=firestore.Query.DESCENDING)
+                    else:
+                        docs = docs.order_by(order)
+                else:
+                    docs = docs.order_by(order)
+            
+            if 'descending' in data:
+                descending = data.get('descending')
+                if 'order' not in data and descending is True:
+                    docs = docs.order_by('Id' ,direction=firestore.Query.DESCENDING)
+
+            if 'limit' in data:
+                limit = data.get('limit')
+                docs = docs.limit(limit)
+
+            docs = docs.get()
+            for doc in docs:
+                results.append(doc.to_dict())
+
+            # Return the results
+            return jsonify(results)
+            
+        except TypeError as err:
+            return f'Type error: {err}'
+
+    elif request.args:
+        try:
+            args = request.args
+
+            for i in args.items():
+                print(i)
+                docs = docs.where(i[0], '==', int(i[1]) if i[0] == 'Id' else i[1])
+            
+            docs = docs.get()
+            for doc in docs:
+                results.append(doc.to_dict())
+            
+            results = sorted(results, key=itemgetter('Id'))
+
+            # Return the results
+            return jsonify(results)
+
+        except TypeError as err:
+            return f'Type error: {err}'
+    else:
+        
+        docs = docs.get()
+        for doc in docs:
+            results.append(doc.to_dict())
+        
+        results = sorted(results, key=itemgetter('Id'))
+
+        # Return the results
+        return jsonify(results)
+
+@app.route('/predict', methods = ['POST'])
 def predict():
-    # 1. Retrieve the data from users as json
+    # Retrieve the data from users as json
     data = request.get_json()
 
-    # 2. Define the inputs for the model
+    # Retrieve all the symptoms data from firestore
+    symptoms = []
+    docs = db.collection('symptoms').get()
+    for doc in docs:
+        symptoms.append(doc.to_dict())
+
+    # Create an array of symptoms sorted by Id
+    symptoms_list = sorted(symptoms, key=itemgetter('Id'))
+    symptoms_list = [x['Symptom'] for x in symptoms_list]
+
+    # Retrieve all the diseases data from firestore
+    diseases = []
+    docs = db.collection('diseases').get()
+    for doc in docs:
+        diseases.append(doc.to_dict())
+
+    # Create an array of diseases sorted by Id
+    diseases_list = sorted(diseases, key=itemgetter('Id'))
+    diseases_list = [x['Disease'] for x in diseases_list]
+
+    # Create the inputs for the model
     model_inputs = []
     for i in symptoms_list:
         model_inputs.append(float(0))
 
-    # 3. Create the inputs for the model
     for i in data.values():
         if i != '0':
             symptom_index = symptoms_list.index(i)
             model_inputs[symptom_index] = float(1)
 
-    # 3. Create the Input DataFrame and convert to tensorflow dataset
+    # Create the Input DataFrame and convert to tensorflow dataset
     df_inputs = pd.DataFrame([model_inputs], columns=symptoms_list)
     model_inputs = tfdf.keras.pd_dataframe_to_tf_dataset(df_inputs, label=None)
 
-    # 4. Predict the data
+    # Predict the data
     prediction = model.predict(model_inputs)
     predicted = prediction[0]
 
-    # 5. Initialize the highest probability variable
-    first_probability = 0
+    # Catch the highest probability value from predicted output
+    highest_probability = max(predicted)
 
-    # 6. Iterate the ndarray to catch the highest probability of predicted disease
-    for i in predicted:
-        if i > first_probability:
-            first_probability = i
-
-    # 7. Catch the disease index
-    disease_index = np.where(predicted == first_probability)
+    # Catch the disease index
+    disease_index = np.where(predicted == highest_probability)
     disease_index = disease_index[0][0]
 
-    # 8. Find the disease based on the disease index
-    predicted_disease = diseases_list[disease_index]
+    # Find the disease based on the disease index
+    for i in diseases:
+        if i['Id'] == disease_index:
+            predicted_disease = i
 
-    # 9. The probability percentage
-    probability = first_probability*100
+    # Assign diseases name, probability, description, and precautions to a variable
+    disease_name = predicted_disease['Disease']
+    probability = highest_probability*100
+    description = predicted_disease['Description']
+    precaution = predicted_disease['Precautions']
 
-    # 10. Filter the description based on the predicted disease
-    filtered_desc = filter(
-        lambda disease: disease['Disease'] == predicted_disease, disease_description)
-    filtered_desc = list(filtered_desc)[0]['Description']
-
-    # 11. Filter the precaution based on the predicted disease
-    filtered_precaution = filter(
-        lambda disease: disease['Disease'] == predicted_disease, disease_precaution)
-    filtered_precaution = list(filtered_precaution)[0]
-    filtered_precaution = [
-        x[1] for x in filtered_precaution.items() if x[0] != 'Disease' and x[1] != 0]
-
-    # 12. Store the results as json
+    # Store the results as json
     results = {
-        'Disease': predicted_disease,
+        'Disease': disease_name,
         'Probability': probability,
-        'Description': filtered_desc,
-        'Precaution': filtered_precaution
+        'Description': description,
+        'Precaution': precaution
     }
     results = make_response(jsonify(results), 200)
 
-    # 13. Return the results
-    # return jsonify(results)
+    # Return the results
     return results
-
 
 if __name__ == '__main__':
     app.run()
