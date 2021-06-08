@@ -77,11 +77,11 @@ In this project we create an **Android Native Mobile Application** with the reso
 
 ### Resources
 
-- [Google CLoud Platform](https://cloud.google.com/)
 - [Tensorflow](https://www.tensorflow.org/)
+- [Google Cloud Platform](https://cloud.google.com/)
 - [Google App Engine](https://cloud.google.com/appengine)
-- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [Gunicorn](https://gunicorn.org/)
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
 <!-- GETTING STARTED -->
 
