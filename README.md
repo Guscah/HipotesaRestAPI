@@ -24,7 +24,7 @@
   <p align="center">
     An AI based healthcare system aims to help patients to detect their disease at an early stage to be able to identify the treatment plan early on and help them secure a good way to live.
     <br />
-    <a href="https://github.com/Guscah/HipotesaRestAPI#about-the-project"><strong>Let's Get Started »</strong></a>
+    <a href="https://github.com/davindb/HipotesaProject#readme"><strong>Go to the project »</strong></a>
     <br />
     <br />
     <a href="https://github.com/davindb/HipotesaProject/">View Demo</a>
@@ -53,7 +53,7 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#deployment">Deployment</a></li>
-          <li><a href="#public-apis">Public APIs</a></li>
+          <li><a href="#open-apis">Open APIs</a></li>
          <li><a href="#other-repositories">Other Repositories</a></li>
       </ul>
     </li>
@@ -87,7 +87,7 @@ In this project we create an **Android Native Mobile Application** with the reso
 
 ## Getting Started
 
-This is an overview of Hipotesa Cloud Architecture, what the prequisites are, how to download and use the app, public APIs guidance for developers, and more.
+This is an overview of Hipotesa Cloud Architecture, what the prequisites are, how to download and use the app, open APIs guidance for developers, and more.
 
 <p align="center">
     <img src="https://github.com/Guscah/HipotesaRestAPI/blob/main/Cloud%20Configuration.png">
@@ -102,21 +102,19 @@ This is an overview of Hipotesa Cloud Architecture, what the prequisites are, ho
 
 To deploy an application on Google Cloud Platform, you don't need to install any software, just provide app.yaml, main.py and requirements.txt files.
 
-
-
 ### Deployment
 
- For the REST API deployment on the Google Cloud Platform to be able to be accessed by android apps, we choose App Engine Service as a platform to deploy our REST API.
+For the REST API deployment on the Google Cloud Platform to be able to be accessed by android apps, we choose App Engine Service as a platform to deploy our REST API.
 
- The deployment service is using App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/AppEngine.md) (Main Option)
+We use App Engine [Flexible Environment](https://github.com/Guscah/HipotesaRestAPI/AppEngine.md) as our deployment service (Main Option).
 
 <b>Note:</b> You can't do the deployment using the App Engine Standard if the number of files are more than 10K and it will need more time for like more than 10 minutes to deploy.
 
-### Public APIs
+### Open APIs
 
-Please check the *API Documentation* below for more information and guidance.
-- [API Documentation](https://github.com/davindb/HipotesaDeveloper/#readme)
+Please refer to the _Hipotesa Open APIs Documentation_ below for more information and guidance.
 
+- [Open APIs Documentation](https://github.com/davindb/HipotesaDeveloper/#readme)
 
 ### Other Repositories
 
@@ -124,18 +122,16 @@ Check our other repositories to know more about Hipotesa.
 
 - [Hipotesa Project](https://github.com/davindb/HipotesaProject/readme)
 - [Hipotesa Application]()
-- [Hipotesa Model Algorithm](https://github.com/davindb/HipotesaAlgorithm)
-
-
+- [Hipotesa Algorithm](https://github.com/davindb/HipotesaAlgorithm)
 
 <!-- TEAM MEMBERS -->
 
 ## Our Cloud Computing Engineer Team
 
-|            Member             | Student ID |       Project Role        |                                                  Contacts                                                  |
-| :---------------------------: | :--------: | :-----------------------: | :--------------------------------------------------------------------------------------------------------: |
-| Agus Cahya Ananda Yoga Putra |  C0121258  | Cloud Computing Engineer | [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url] |
-|    Fadia Fatta Dylla     |  C0121262  | Cloud Computing Engineer | [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
+|            Member            | Student ID |       Project Role       |                                                  Contacts                                                  |
+| :--------------------------: | :--------: | :----------------------: | :--------------------------------------------------------------------------------------------------------: |
+| Agus Cahya Ananda Yoga Putra |  C0121258  | Cloud Computing Engineer |   [![agus-linkedin][linkedin-shield]][agus-linkedin-url][![agus-github][github-shield]][agus-github-url]   |
+|      Fadia Fatta Dylla       |  C0121262  | Cloud Computing Engineer | [![fadia-linkedin][linkedin-shield]][fadia-linkedin-url][![fadia-github][github-shield]][fadia-github-url] |
 
 <!-- CONTRIBUTING -->
 
