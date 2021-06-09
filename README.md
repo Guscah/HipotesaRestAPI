@@ -24,10 +24,10 @@
   <p align="center">
     An AI based healthcare system aims to help patients to detect their disease at an early stage to be able to identify the treatment plan early on and help them secure a good way to live.
     <br />
-    <a href="https://github.com/davindb/HipotesaProject#readme"><strong>Go to the project »</strong></a>
+    <a href="https://github.com/davindb/Hipotesa#readme"><strong>Go to the project »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/davindb/HipotesaProject/">View Demo</a>
+    <a href="https://github.com/davindb/Hipotesa/">View Demo</a>
     ·
     <a href="http://www.hipotesa.tech/">Our Website</a>
     ·
@@ -90,7 +90,7 @@ In this project we create an **Android Native Mobile Application** with the reso
 This is an overview of Hipotesa Cloud Architecture, what the prequisites are, how to download and use the app, open APIs guidance for developers, and more.
 
 <p align="center">
-    <img src="https://github.com/Guscah/HipotesaRestAPI/blob/main/Cloud%20Configuration.png">
+    <img src="images/Cloud%20Configuration.png">
 </p>
 
 ### Prerequisites
@@ -121,7 +121,7 @@ Please refer to the _Hipotesa Open APIs Documentation_ below for more informatio
 
 Check our other repositories to know more about Hipotesa.
 
-- [Hipotesa Project](https://github.com/davindb/HipotesaProject/readme)
+- [Hipotesa Project](https://github.com/davindb/Hipotesa/#readme)
 - [Hipotesa Application]()
 - [Hipotesa Algorithm](https://github.com/davindb/HipotesaAlgorithm)
 
